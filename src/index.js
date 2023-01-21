@@ -25,14 +25,14 @@ const refs = {
 refs.searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
 
-async function onSearch(e) {
-  e.preventDefault();
+async function onSearch(element) {
+  element.preventDefault();
   
   if (!refs.loadMoreBtn.classList.contains('is-hidden')) {
     refs.loadMoreBtn.classList.add('is-hidden');
     };
   
-  inputText.searchQuery = e.currentTarget.elements.searchQuery.value;
+  inputText.searchQuery = element.currentTarget.elements.searchQuery.value;
   inputText.resetPage();
 
    try {
