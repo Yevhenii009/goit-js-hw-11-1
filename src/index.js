@@ -22,16 +22,11 @@ const refs = {
   loadMoreBtn: document.querySelector('.load-more'),
 };
 
-
-
-
 refs.searchForm.addEventListener('submit', onSearch);
 loadMoreBtn.refs.button.addEventListener('click', onLoadMore);
-// refs.loadMoreBtn.classList.add('is-hidden');
-
 
 async function onSearch(e) {
-  e.preventDefault();        //Чтоб не перезагружалась страничка при субмите формы
+  e.preventDefault();
   
   if (!refs.loadMoreBtn.classList.contains('is-hidden')) {
     refs.loadMoreBtn.classList.add('is-hidden');
@@ -55,8 +50,6 @@ async function onSearch(e) {
           clearList();
           loadMoreBtn.enable();
   
-          
-
   if (hits.length === 0) {
     Notiflix.Notify.failure('Sorry, there are no images matching your search query. Please try again.');
   } else {
@@ -64,25 +57,17 @@ async function onSearch(e) {
   Notiflix.Notify.success(`Hooray! We found ${totalHits} images.`);
   createGalleryList(hits);
   }
-
   loadMoreBtn.show();
-  // loadMoreBtn.disable();
-
 }
 
 } catch (error) {
 Notiflix.Notify.failure("We're sorry, but you've reached the end of search results.");
 console.log(error.message);
-
 loadMoreBtn.enable();
 }
-};
-
-      
+};  
 
 async function onLoadMore() {
-// e.preventDefault();
-// console.log('more');
 const response = await inputText.makesRequest();
 const {
   data: { hits },
@@ -93,27 +78,17 @@ if (hits.length === 0) {
 } else createGalleryList(hits); 
 };
 
-
-
-
-
 async function createGalleryList(hits) {
-
 const markup = itemsTemplate(hits);
 
-
-
-refs.gallery.insertAdjacentHTML('beforeend', markup);                                                   //Вставляет результат вызова шаблона
+refs.gallery.insertAdjacentHTML('beforeend', markup);
 
 simpleLightbox();
 scroll();
-  
 };
 
-
-
 function clearList() {
-  refs.gallery.innerHTML = '';              //Очищает контейнер при сл.запросе поиска
+  refs.gallery.innerHTML = '';
 }
 
 function simpleLightbox() {
