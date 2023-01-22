@@ -3,7 +3,7 @@ input {
 
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
-    border-color: #2d0d4b;
+    border-color: #ff0000;
     font-size: 20px;
     margin-right: 0;
 }
@@ -17,7 +17,7 @@ input {
     font-size: 20px;
     border: none;
     cursor: pointer;
-    border-color: #2d0d4b;
+    border-color: #ff0000;
 }
 
 img {
@@ -78,18 +78,6 @@ img {
     cursor: pointer;
     font-size: 14px;
 }
-
-// .visually-hidden {
-//   position: absolute;
-//   width: 1px;
-//   height: 1px;
-//   margin: -1px;
-//   padding: 0;
-//   overflow: hidden;
-//   border: 0;
-//   clip: rect(0 0 0 0);
-// }
-
 .is-hidden {
     display: none;
 }

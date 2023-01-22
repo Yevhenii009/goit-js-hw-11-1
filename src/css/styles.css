@@ -21,7 +21,7 @@ body {
 
 */ .load-more {
     display: block;
-    background-color: #69bdd6;
+    background-color: #5e11ee;
     margin: 0 auto;
     border: none;
     color: white;
@@ -55,7 +55,7 @@ body {
     margin-right: auto;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: #6465aab2;
+    background-color: #5cc5b8b2;
 }
 
 .info {
